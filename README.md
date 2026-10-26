@@ -1,4 +1,6 @@
-# Krop Portfolio
+# Eric Portfolio
+
+The site is for Erdenebat, who goes by Eric. The big name on the page is the nickname, Eric, and the first name, Erdenebat, appears in the hero details and the footer.
 
 A one-page portfolio website that is a single HTML file plus a PDF. There is no build step, no framework and no package to install. It has an intro animation, hover effects, a light and dark theme, and a CV section that shows your PDF on the page with Share and Download buttons.
 
@@ -51,13 +53,16 @@ Everything is in `index.html`. Search for the text you want to change.
 
 ### Name
 
-Change "Krop" in these places:
+Change "Eric" (the nickname) and "Erdenebat" (the first name) in these places:
 
 - `<title>` and the `<meta name="description">` in the head.
 - The brand link in the header (`<a class="brand">`).
 - The large hero heading. Each letter is its own `<span style="--i:N">` so it can animate separately. If your name has a different number of letters, add or remove spans and keep `--i` counting up from 0.
 - The intro screen (`.intro-word`), which uses the same one-span-per-letter pattern.
-- The footer, and the `"Krop CV"` share title and `Krop-CV.pdf` download name in the CV section and script.
+- The first name in the hero details ("Erdenebat, goes by Eric") and in the footer.
+- The `"Eric CV"` share title and the `Eric-CV.pdf` download name in the CV section and script.
+
+The CV file itself (`cv.pdf`) is separate and is not changed by any of this. Put whatever name you want on it.
 
 ### Hero text
 
@@ -99,7 +104,7 @@ The email address is the text inside `<p class="mail" id="mail">`. The Copy emai
 
 If you would rather use another file name, search `index.html` for `cv.pdf` and change all four places: the Download link, the `getDocument("cv.pdf")` call in the script, and the two references in the fallback viewer code.
 
-The Download button saves the file as `Krop-CV.pdf`. Change the `download="Krop-CV.pdf"` attribute to rename it.
+The Download button saves the file as `Eric-CV.pdf`. Change the `download="Eric-CV.pdf"` attribute to rename it.
 
 Tips for the PDF:
 

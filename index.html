@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Krop Portfolio</title>
-<meta name="description" content="Portfolio and CV of Krop.">
+<title>Eric Portfolio</title>
+<meta name="description" content="Portfolio and CV of Erdenebat (Eric).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&display=swap">
@@ -134,12 +134,26 @@ section { padding-block: clamp(36px, 6vw, 72px); border-top: 1px solid var(--lin
 @media (hover: none) { .peek { display: none; } }
 
 /* About */
-.about { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 56px; }
-@media (max-width: 760px) { .about { grid-template-columns: minmax(0, 1fr); } }
-.about p { margin: 0 0 14px; max-width: 60ch; }
-.skills { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; align-content: flex-start; }
-.skills li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; transition: background .25s, color .25s, border-color .25s, transform .25s; cursor: default; }
-.skills li:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); transform: translateY(-3px); }
+.about { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px clamp(32px, 6vw, 88px); align-items: start; }
+@media (max-width: 900px) { .about { grid-template-columns: minmax(0, 1fr); } }
+.about-text { display: grid; gap: 18px; }
+.about-text p { margin: 0; max-width: 56ch; color: var(--muted); }
+.about-text .lead {
+  color: var(--fg); max-width: 22em; text-wrap: balance;
+  font-size: clamp(24px, 3.2vw, 36px); font-weight: 700; line-height: 1.2; letter-spacing: -.025em;
+}
+.about-text .lead + p { margin-top: 6px; }
+.about-skills h3 { margin: 0 0 14px; font-weight: 400; }
+.skills { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 12px; }
+.skills li {
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 2px; min-width: 0;
+  border: 1px solid var(--line); border-radius: 28px; padding: 14px 22px; font-size: 18px; line-height: 1.25; cursor: default;
+  transition: background .25s, color .25s, border-color .25s, transform .25s;
+}
+.skills li:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); transform: translateY(-4px); }
+.s-main { font-weight: 700; letter-spacing: -.01em; }
+.s-sub { font-size: 14px; color: var(--muted); transition: color .25s; }
+.skills li:hover .s-sub { color: inherit; opacity: .85; }
 
 /* CV */
 .btn {
@@ -185,20 +199,26 @@ body { overflow-x: clip; }
   .cv-actions { width: 100%; }
   .cv-actions .btn { flex: 1 1 0; text-align: center; padding-inline: 8px; }
   .cv-stage { padding: 6px; }
+  .skills { gap: 10px; }
+  .skills li { padding: 12px 16px; font-size: 17px; border-radius: 22px; }
+}
+
+.hero h1 span:nth-child(3) {
+  margin-left: 0.02em;
 }
 </style>
 </head>
 <body>
 
 <div class="intro" aria-hidden="true">
-  <div class="intro-word"><span style="--i:0">K</span><span style="--i:1">r</span><span style="--i:2">o</span><span style="--i:3">p</span></div>
+  <div class="intro-word"><span style="--i:0">E</span><span style="--i:1">r</span><span style="--i:2">i</span><span style="--i:3">c</span></div>
   <div class="intro-bar"></div>
 </div>
 
 <header>
   <div class="wrap">
     <nav aria-label="Main">
-      <a class="brand" href="#top">Krop</a>
+      <a class="brand" href="#top">Home</a>
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#cv">CV</a>
@@ -210,33 +230,42 @@ body { overflow-x: clip; }
 
 <main class="wrap" id="top">
   <div class="hero">
-    <h1 aria-label="Krop"><span style="--i:0">K</span><span style="--i:1">r</span><span style="--i:2">o</span><span style="--i:3">p</span></h1>
+    <h1 aria-label="Eric"><span style="--i:0">E</span><span style="--i:1">r</span><span style="--i:2">i</span><span style="--i:3">c</span></h1>
     <div class="hero-meta fade">
-      <p>Your discipline here. One sentence on what you make and who it is for.</p>
-      <p class="mono">Portfolio 2026<br>City, Country<br>Open to new work</p>
+      <!-- <p>In pursuit of extrordinary</p> -->
+      <p class="mono">Erdenebat, goes by Eric<br>Portfolio 2026<br>Ulaanbaatar, Mongolia<br>Open to new work</p>
     </div>
   </div>
 
   <section id="work" aria-labelledby="work-h">
-    <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="mono">Sample entries, replace with yours</span></div>
+    <div class="sec-head"><h2 id="work-h">Work experience</h2></div>
     <ul class="work">
-      <li><a href="#work" data-h="250" data-i="A"><span class="y mono">2026</span><span class="t">Project one</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Two lines on the problem, your role and the result. Add a link to the live project.</p></a></li>
-      <li><a href="#work" data-h="330" data-i="B"><span class="y mono">2025</span><span class="t">Project two</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Two lines on the problem, your role and the result. Add a link to the live project.</p></a></li>
-      <li><a href="#work" data-h="170" data-i="C"><span class="y mono">2025</span><span class="t">Project three</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Two lines on the problem, your role and the result. Add a link to the live project.</p></a></li>
-      <li><a href="#work" data-h="20" data-i="D"><span class="y mono">2024</span><span class="t">Project four</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Two lines on the problem, your role and the result. Add a link to the live project.</p></a></li>
+      <li><a href="https://sodura.ai/" data-h="250" data-i="A"><span class="y mono">2026</span><span class="t">Sodura AI</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Landing page, Web developer.</p></a></li>
+      <li><a href="https://www.instagram.com/p/Dbf9lZrGV0h/?srtk=MzRlODBiNWFlZA==" data-h="170" data-i="C"><span class="y mono">2026</span><span class="t">Rocket payload</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Made a custom payload from scratch using microcontrollers, Embedded systems engineer.</p></a></li>
+      <li><a href="https://play.google.com/store/apps/details?id=org.hamag.app.hamag&hl=en" data-h="20" data-i="D"><span class="y mono">2026</span><span class="t">Hamag app</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Made an full stack app from scratch, Flutter developer.</p></a></li>
+      <li><a href="https://github.com/1onest4r/Opengl_game" data-h="330" data-i="B"><span class="y mono">2025</span><span class="t">Chaos race</span><span class="arrow" aria-hidden="true">&#8599;</span><p class="d">Made a 3d racing game from scratch using C++ and OpenGL, Graphics engineer.</p></a></li>
     </ul>
   </section>
 
   <section id="about" aria-labelledby="about-h">
     <div class="sec-head"><h2 id="about-h">About</h2></div>
     <div class="about">
-      <div>
-        <p>Write two or three short paragraphs here. Say what you do, how you work and what you are looking for next.</p>
-        <p>Mention a tool, a place or a project that shows who you are beyond the job title.</p>
+      <div class="about-text">
+        <p class="lead">I'm a Computer Science student in Ulaanbaatar, Mongolia, who enjoys building things that go beyond the screen.</p>
+        <p>My interests span systems programming, computer graphics, embedded systems and cross platform application development.</p>
+        <p>Understanding how things work under the hood and turning ideas into practical, working software.</p>
+        <p>Most of my learning comes from projects. I've worked on everything from OpenGL rendering experiments and local multiplayer games to ESP32 based rocket telemetry systems. Solving problems as well as finding out the problems by testing its limits and understanding its nature.</p>
       </div>
-      <ul class="skills" aria-label="Skills">
-        <li>Skill one</li><li>Skill two</li><li>Skill three</li><li>Skill four</li><li>Skill five</li><li>Skill six</li>
-      </ul>
+      <div class="about-skills">
+        <h3 class="mono">Skills</h3>
+        <ul class="skills" aria-label="Skills">
+          <li><span class="s-main">C++</span><span class="s-sub">Systems programming</span></li>
+          <li><span class="s-main">OpenGL</span><span class="s-sub">Computer graphics</span></li>
+          <li><span class="s-main">ESP32</span><span class="s-sub">Embedded systems</span></li>
+          <li><span class="s-main">Flutter</span><span class="s-sub">Cross platform apps</span></li>
+          <li><span class="s-main">Linux</span><span class="s-sub">Git</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -245,7 +274,7 @@ body { overflow-x: clip; }
       <h2 id="cv-h">CV</h2>
       <div class="cv-actions">
         <button class="btn" id="share" type="button">Share</button>
-        <a class="btn" id="download" href="cv.pdf" download="Krop-CV.pdf">Download</a>
+        <a class="btn" id="download" href="cv.pdf" download="Eric-CV.pdf">Download</a>
       </div>
     </div>
     <div class="cv-stage" id="cv-stage" aria-live="polite">
@@ -255,14 +284,14 @@ body { overflow-x: clip; }
 
   <section id="contact" aria-labelledby="contact-h">
     <div class="sec-head"><h2 id="contact-h">Contact</h2></div>
-    <p class="mail" id="mail">you@example.com</p>
+    <p class="mail" id="mail">Erdenebat.byambasuren21@gmail.com</p>
     <div class="row">
       <button class="btn" id="copy" type="button">Copy email</button>
       <span class="mono" id="copied" role="status"></span>
     </div>
   </section>
 
-  <footer class="mono"><span>Krop</span><span>2026</span></footer>
+  <footer class="mono"><span>Erdenebat (Eric)</span><span>2026</span></footer>
 </main>
 
 <div class="peek" id="peek" aria-hidden="true"></div>
@@ -330,7 +359,7 @@ body { overflow-x: clip; }
   var toast = document.getElementById("toast"), tt;
   function say(msg) { toast.textContent = msg; toast.classList.add("on"); clearTimeout(tt); tt = setTimeout(function () { toast.classList.remove("on"); }, 2200); }
   document.getElementById("share").addEventListener("click", function () {
-    var data = { title: "Krop CV", url: location.href };
+    var data = { title: "Eric CV", url: location.href };
     if (navigator.share) { navigator.share(data).catch(function () {}); return; }
     try { navigator.clipboard.writeText(location.href).then(function () { say("Link copied"); }, function () { say("Copy the link from the address bar"); }); }
     catch (e) { say("Copy the link from the address bar"); }
